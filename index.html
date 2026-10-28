@@ -9009,7 +9009,7 @@ function makeSampleW(){
    Only in the Life Planner build (build.js injects it). One thing at a time for ADHD brains:
    tasks on a board, a focus timer, routines, habits, home, money, water, goals and a little fun. */
 // [key, name, emoji, line icon for the Calm look]
-const LNAV=[['today','Today','☀️','sun'],['tasks','Tasks','✅','kanban'],['focus','Focus','⏱️','clock'],['routines','Routines','🔁','repeat'],['home','Home','🏠','home'],['money','Money','💰','wallet'],['health','Water','💧','drop'],['goals','Goals','🎯','target'],['cal','Calendar','🗓️','calendar'],['fun','Rewards','🎉','star'],['more','More','✨','dots']];
+const LNAV=[['today','Today','☀️','sun'],['tasks','Tasks','✅','kanban'],['cal','Calendar','🗓️','calendar'],['focus','Focus','⏱️','clock'],['routines','Routines','🔁','repeat'],['home','Home','🏠','home'],['money','Money','💰','wallet'],['health','Water','💧','drop'],['goals','Goals','🎯','target'],['fun','Rewards','🎉','star'],['more','More','✨','dots']];
 const LSECTIONS=[['routines','Routines & habits','🔁','Routines you tick off step by step, and habits that never reset'],['home','Home & chores','🏠','A cleaning zone a day, and chores for everyone at home'],['money','Money','💰','Safe to spend, bills, spending and savings'],['health','Water','💧','A glass at a time, with a gentle daily goal'],['goals','Goals','🎯','Big goals in small steps'],['fun','Rewards & fun','🎉','XP, a reward jar, a garden and boss battles']];
 const LSEC_OF={routines:'routines',home:'home',money:'money',health:'health',goals:'goals',fun:'fun'};
 const LPRESETS=[['tasks','Just tasks','Today, tasks, focus and routines. Add more any time.',['routines','fun']],['home','Home & family','Tasks, routines, chores and money.',['routines','home','money','fun']],['all','Everything','Every section. Switch off what you don’t need.',['routines','home','money','health','goals','fun']]];
@@ -9266,7 +9266,7 @@ function lifeRenderNav(){
   document.getElementById('nav').innerHTML=items.map(btn).join('');
   const st=document.getElementById('sidetrip'); if(st) st.innerHTML=`<button class="lside-dump" data-act="ldump-open">🧠 Brain dump<small>catch a thought, sort it later</small></button>`;
   // phone: Today, four sections and More
-  const order=['tasks','focus','routines','home','money','health','goals','fun'];
+  const order=['tasks','cal','routines','home','money','health','goals','focus','fun'];
   const main=[items.find(i=>i[0]==='today'),...order.map(k=>items.find(i=>i[0]===k)).filter(Boolean).slice(0,4),items.find(i=>i[0]==='more')].filter(Boolean);
   const tcur=main.some(i=>i[0]===cur)?cur:'more';
   const tb=document.getElementById('tabbar');
